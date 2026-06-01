@@ -3,59 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cihan Akkan | 6. Sınıf Proje Paneli</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cihan Akkan | 6. Sınıf Akademik Portal</title>
     <style>
-        /* Butonlar için ekstra şık stiller */
-        .btn-container {
-            margin-top: 30px;
+        /* MPL Tarzı Parlayan Koyu Tema Tasarımı */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+            align-items: center;
             justify-content: center;
+            padding: 20px;
         }
-        .route-btn {
-            background: linear-gradient(135deg, #38bdf8, #0284c7);
-            color: #0f172a;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 30px;
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 35px;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 5'li Ders Grid Sistemi */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .lesson-card {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 25px 15px;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            color: #cbd5e1;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
-        .route-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
-            background: linear-gradient(135deg, #7dd3fc, #0369a1);
+
+        .lesson-card:hover {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+            color: #ffffff;
+        }
+
+        .lesson-card .icon {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
+            transition: transform 0.3s;
+        }
+
+        .lesson-card:hover .icon {
+            transform: scale(1.1);
+        }
+
+        .lesson-card span.title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.2), transparent);
+            margin: 35px 0;
+        }
+
+        /* Alt Kısım ve Parlayan Hızlı Butonlar */
+        .routing-title {
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #ffffff;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
     </style>
 </head>
 <body>
-    <div class="glass-container">
+
+    <div class="container">
+        <!-- Logo Bölümü -->
         <div class="logo">CIHAN<span>AKKAN</span></div>
         <h1>6. Sınıf Akademik Portal</h1>
         
-        <!-- Üstteki Ders Kartları Bölümü -->
-        <div class="lessons">
-            <a href="/turkce" class="lesson-card"><span>✍️</span><br>Türkçe</a>
-            <a href="/matematik" class="lesson-card"><span>🔢</span><br>Matematik</a>
-            <a href="/sosyal" class="lesson-card"><span>🌍</span><br>Sosyal Bilgiler</a>
-            <a href="/fen" class="lesson-card"><span>🧪</span><br>Fen Bilimleri</a>
-            <a href="/bilisim" class="lesson-card"><span>💻</span><br>Bilişim</a>
+        <!-- Üstteki 5'li Havalı Kart Yapısı -->
+        <div class="lessons-grid">
+            <a href="/turkce" class="lesson-card">
+                <span class="icon">✍️</span>
+                <span class="title">Türkçe</span>
+            </a>
+            <a href="/matematik" class="lesson-card">
+                <span class="icon">🔢</span>
+                <span class="title">Matematik</span>
+            </a>
+            <a href="/sosyal" class="lesson-card">
+                <span class="icon">🌍</span>
+                <span class="title">Sosyal Bilgiler</span>
+            </a>
+            <a href="/fen" class="lesson-card">
+                <span class="icon">🧪</span>
+                <span class="title">Fen Bilimleri</span>
+            </a>
+            <a href="/bilisim" class="lesson-card">
+                <span class="icon">💻</span>
+                <span class="title">Bilişim</span>
+            </a>
         </div>
 
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+        <hr class="divider">
 
-        <!-- İstediğin Hızlı Geçiş Tuşları -->
-        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 15px;">🚀 Hızlı Proje Bağlantıları (Routing):</p>
-        <div class="btn-container">
-            <a href="/turkce" class="route-btn">Türkçe Sınavı'na Git ➔</a>
-            <a href="/sosyal" class="route-btn">Sosyal Sunumu'na Git ➔</a>
+        <!-- Alt Kısımdaki Hızlı Butonlar -->
+        <div class="routing-title">🚀 Hızlı Proje Bağlantıları (Routing):</div>
+        <div class="btn-group">
+            <a href="/turkce" class="action-btn">Türkçe Sınavı'na Git ➔</a>
         </div>
     </div>
+
 </body>
 </html>
