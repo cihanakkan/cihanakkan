@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cihan Akkan | 6. Sınıf Proje Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Butonlar için ekstra şık stiller */
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .route-btn {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: #0f172a;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .route-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+            background: linear-gradient(135deg, #7dd3fc, #0369a1);
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <div class="logo">CIHAN<span>AKKAN</span></div>
+        <h1>6. Sınıf Akademik Portal</h1>
+        
+        <!-- Üstteki Ders Kartları Bölümü -->
+        <div class="lessons">
+            <a href="/turkce" class="lesson-card"><span>✍️</span><br>Türkçe</a>
+            <a href="/matematik" class="lesson-card"><span>🔢</span><br>Matematik</a>
+            <a href="/sosyal" class="lesson-card"><span>🌍</span><br>Sosyal Bilgiler</a>
+            <a href="/fen" class="lesson-card"><span>🧪</span><br>Fen Bilimleri</a>
+            <a href="/bilisim" class="lesson-card"><span>💻</span><br>Bilişim</a>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+        <!-- İstediğin Hızlı Geçiş Tuşları -->
+        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 15px;">🚀 Hızlı Proje Bağlantıları (Routing):</p>
+        <div class="btn-container">
+            <a href="/turkce" class="route-btn">Türkçe Sınavı'na Git ➔</a>
+            <a href="/sosyal" class="route-btn">Sosyal Sunumu'na Git ➔</a>
+        </div>
+    </div>
+</body>
+</html>
