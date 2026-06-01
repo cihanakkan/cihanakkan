@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cihan Akkan | 6. Sınıf Akademik Portal</title>
     <style>
-        /* MPL Tarzı Parlayan Koyu Tema Tasarımı */
+        /* Kırmızı Espor / MPL Tarzı Parlayan Koyu Tema */
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #0b0f19;
+            background-color: #0d080a;
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -26,12 +26,12 @@
         .container {
             width: 100%;
             max-width: 950px;
-            background: rgba(17, 24, 39, 0.7);
-            border: 1px solid rgba(56, 189, 248, 0.15);
+            background: rgba(20, 15, 17, 0.75);
+            border: 1px solid rgba(239, 68, 68, 0.2);
             border-radius: 24px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
         }
 
@@ -39,10 +39,10 @@
             font-size: 1.8rem;
             font-weight: 900;
             letter-spacing: 2px;
-            color: #38bdf8;
+            color: #ef4444;
             margin-bottom: 10px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
         }
 
         .logo span {
@@ -53,12 +53,11 @@
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 35px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* 5'li Ders Grid Sistemi */
         .lessons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -67,8 +66,8 @@
         }
 
         .lesson-card {
-            background: #111827;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #181113;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 16px;
             padding: 25px 15px;
             text-decoration: none;
@@ -82,10 +81,10 @@
         }
 
         .lesson-card:hover {
-            border-color: #38bdf8;
-            background: rgba(56, 189, 248, 0.05);
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.06);
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.2);
             color: #ffffff;
         }
 
@@ -107,13 +106,12 @@
         .divider {
             border: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.2), transparent);
+            background: linear-gradient(to right, transparent, rgba(239, 68, 68, 0.3), transparent);
             margin: 35px 0;
         }
 
-        /* Alt Kısım ve Parlayan Hızlı Butonlar */
         .routing-title {
-            color: #64748b;
+            color: #78716c;
             font-size: 0.95rem;
             font-weight: 600;
             margin-bottom: 20px;
@@ -131,7 +129,7 @@
         }
 
         .action-btn {
-            background: linear-gradient(135deg, #0284c7, #0369a1);
+            background: linear-gradient(135deg, #dc2626, #991b1b);
             color: #ffffff;
             padding: 14px 28px;
             font-size: 1rem;
@@ -139,25 +137,23 @@
             border-radius: 12px;
             text-decoration: none;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.4);
         }
 
         .action-btn:hover {
             transform: translateY(-2px);
-            background: linear-gradient(135deg, #38bdf8, #0284c7);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo Bölümü -->
         <div class="logo">CIHAN<span>AKKAN</span></div>
         <h1>6. Sınıf Akademik Portal</h1>
         
-        <!-- Üstteki 5'li Havalı Kart Yapısı -->
         <div class="lessons-grid">
             <a href="/turkce" class="lesson-card">
                 <span class="icon">✍️</span>
@@ -183,7 +179,6 @@
 
         <hr class="divider">
 
-        <!-- Alt Kısımdaki Hızlı Butonlar -->
         <div class="routing-title">🚀 Hızlı Proje Bağlantıları (Routing):</div>
         <div class="btn-group">
             <a href="/turkce" class="action-btn">Türkçe Sınavı'na Git ➔</a>
